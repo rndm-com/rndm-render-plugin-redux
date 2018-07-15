@@ -1,0 +1,11 @@
+{
+  "name": "rndm-render-plugin-redux",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "scripts": {},
+  "author": "RNDM",
+  "license": "Apache-2.0",
+  "dependencies": {
+    
+  }
+}
