@@ -9,8 +9,8 @@ const transform = require('./transform');
 const current = process.cwd();
 
 const init = (cmd = {}) => {
-  const amends = range(cmd.node ? 2 : 0).map(() => '..').join('/');
-  const src = [current, amends, 'src'].join('/');
+  const relativity = range(cmd.node ? 2 : 0).map(() => '..').join('/');
+  const src = [current, relativity, 'src'].join('/');
   const base = [src, 'app', 'redux'].join('/');
   buildFilesForFolder(input, base);
 
