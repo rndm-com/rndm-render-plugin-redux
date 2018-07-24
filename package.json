@@ -7,6 +7,9 @@
   "scripts": {},
   "dependencies": {
     "babel-generator": "^6.26.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-createelement-to-jsx": "^1.0.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
     "react": "16.3.2",
     "react-art": "16.3.2",
     "react-dom": "16.3.2",
@@ -14,8 +17,5 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "rndm-utils": "file:///Users/paul.napier/Desktop/dev/mine/rndm/_utils/rndm-utils"
-  },
-  "devDependencies": {
-    "babel-plugin-transform-react-jsx": "^6.24.1"
   }
 }

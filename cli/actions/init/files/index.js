@@ -82,7 +82,7 @@ const DELIMITERS = Object.freeze({
   PATH: '/',
   QUERY: '?',
   PARAMS: '&',
-  PARAM: '='
+  PARAM: '=',
 });
 
 const METHODS = Object.freeze({
@@ -138,15 +138,15 @@ const getRequest = ({
                       options: {
                         method = METHODS.GET,
                         headers,
-                        body
+                        body,
                       } = {},
                     }) => ([
   url || buildUrl(api),
   pickBy({
     method,
     headers,
-    body: JSON.stringify(body)
-  })
+    body: JSON.stringify(body),
+  }),
 ]);
 
 export default ({ dispatch }) => next => (action) => {
@@ -176,7 +176,7 @@ export default ({ dispatch }) => next => (action) => {
   return fetch(...request)
     .then(onResponse)
     .then(onAPISuccess)
-    .catch(onAPIFail)
+    .catch(onAPIFail);
 };
 `,
           filename: 'api.js'
