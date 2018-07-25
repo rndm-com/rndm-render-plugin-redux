@@ -2,7 +2,7 @@ const fs = require('fs');
 const { range } = require('lodash');
 const babel = require('babel-core');
 const generator = require('babel-generator');
-const buildFilesForFolder = require('../../utils/buildFilesForFolder');
+const { buildFilesForFolder } = require('rndm-utils');
 const input = require('./files');
 const transform = require('./transform');
 
