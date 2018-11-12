@@ -3,7 +3,7 @@ const program = require('commander');
 const init = require('./actions/init');
 const babel = require('babel-core');
 
-const name = 'rndm-render-plugin-redux';
+const name = '@rndm/render-plugin-redux';
 
 program
   .version('0.1.0')

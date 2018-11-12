@@ -205,7 +205,7 @@ export default ({ dispatch }) => next => (action) => {
       files: [
         {
           string: `import { combineReducers } from 'redux';
-import { redux } from 'rndm-render-plugin-redux';
+import { redux } from '@rndm/render-plugin-redux';
 import api from './api';
 
 const reducers = {

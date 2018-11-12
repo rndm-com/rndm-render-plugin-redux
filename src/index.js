@@ -1,4 +1,4 @@
-import { use } from 'rndm-render';
+import { use } from '@rndm/render';
 import middleware from './middleware';
 import redux from './redux';
 
