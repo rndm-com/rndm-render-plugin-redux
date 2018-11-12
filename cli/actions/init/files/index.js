@@ -46,10 +46,12 @@ export default output;
           string: `import { applyMiddleware } from 'redux';
 import api from './api';
 import batch from './batch';
+import rndm from './rndm';
 
 const middleware = [
   batch,
   api,
+  rndm,
 ];
 
 const output = applyMiddleware(...middleware);
@@ -66,6 +68,22 @@ export default ({ dispatch }) => next => action => (
 );
 `,
           filename: 'batch.js'
+        },
+        {
+          string: `import { render } from '@rndm/render';
+
+export default ({ dispatch, getState }) => next => action => {
+
+  if (action.type.startsWith('RNDM_DISPATCH_')) {
+    const { updates = [] } = action;
+    const state = getState();
+    dispatch(updates.map(({ type, set, to }) => ({ type, [set]: render(to, 'RNDM.functionChain', { state })()})));
+  }
+
+  return next(action);
+};
+`,
+          filename: 'rndm.js'
         },
         {
           string: `import { inRange, pickBy } from 'lodash';
