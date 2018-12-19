@@ -15,8 +15,8 @@ const importReactRedux = (input) => {
   if (redux) {
     const provider = redux.specifiers.find(specifier => specifier.imported.name === 'Provider');
     if (!provider) {
-      redux.specifiers = (redux.specifiers || [])
-      redux.specifiers.push(importProvider)
+      redux.specifiers = (redux.specifiers || []);
+      redux.specifiers.push(importProvider);
     }
   } else {
     const insert = {
