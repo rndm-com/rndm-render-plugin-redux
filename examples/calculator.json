@@ -1,0 +1,1398 @@
+{
+  "type": "react-native.View",
+  "props": {
+    "style": {
+      "flex": 1,
+      "backgroundColor": "#ffffff",
+      "alignItems": "center",
+      "justifyContent": "center"
+    },
+    "children": [
+      {
+        "type": "react-native.View",
+        "props": {
+          "style": {
+            "backgroundColor": "#000000"
+          },
+          "children": [
+            {
+              "type": "react-native.View",
+              "props": {
+                "style": {
+                  "height": 80,
+                  "flexDirection": "row",
+                  "marginBottom": 10,
+                  "alignItems": "flex-end",
+                  "justifyContent": "flex-end",
+                  "marginRight": 10
+                },
+                "children": [
+                  {
+                    "type": "react-native.Text",
+                    "props": {
+                      "style": {
+                        "color": "#ffffff"
+                      },
+                      "middleware": [
+                        {
+                          "middleware": "redux.connect",
+                          "args": [
+                            [
+                              {
+                                "from": "rndm.calculator_value",
+                                "to": "children",
+                                "default": 0
+                              }
+                            ]
+                          ]
+                        }
+                      ],
+                      "children": "0"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "react-native.View",
+              "props": {
+                "children": [
+                  {
+                    "type": "react-native.View",
+                    "props": {
+                      "style": {
+                        "flexDirection": "row",
+                        "marginBottom": 10
+                      },
+                      "children": [
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_CALCULATOR_DID_CLEAR",
+                                        "calculator_value": "",
+                                        "calculator_stored": "",
+                                        "calculator_symbol": "_.add"
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 152,
+                                    "backgroundColor": "#e8e8e8",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#000000"
+                                        },
+                                        "children": "AC"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_BEGIN_CALCULATING",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_STORE_VALUE",
+                                            "set": "calculator_stored",
+                                            "to": {
+                                              "args": [
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_stored"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                },
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_value"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                }
+                                              ],
+                                              "isFunc": true,
+                                              "type": {
+                                                "type": "_.identity",
+                                                "isFunc": true,
+                                                "args": [
+                                                  "$.state.rndm.calculator_symbol||_.add"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_VALUE",
+                                            "set": "calculator_value",
+                                            "to": ""
+                                          },
+                                          {
+                                            "type": "RNDM_DID_SET_SYMBOL",
+                                            "set": "calculator_symbol",
+                                            "to": "_.divide"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#ffa739",
+                                    "marginLeft": 10,
+                                    "marginRight": 10,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "÷"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "react-native.View",
+                    "props": {
+                      "style": {
+                        "flexDirection": "row",
+                        "marginBottom": 10
+                      },
+                      "children": [
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "7"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "7"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "8"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "8"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "9"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "9"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_BEGIN_CALCULATING",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_STORE_VALUE",
+                                            "set": "calculator_stored",
+                                            "to": {
+                                              "args": [
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_stored"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                },
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_value"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                }
+                                              ],
+                                              "isFunc": true,
+                                              "type": {
+                                                "type": "_.identity",
+                                                "isFunc": true,
+                                                "args": [
+                                                  "$.state.rndm.calculator_symbol||_.add"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_VALUE",
+                                            "set": "calculator_value",
+                                            "to": ""
+                                          },
+                                          {
+                                            "type": "RNDM_DID_SET_SYMBOL",
+                                            "set": "calculator_symbol",
+                                            "to": "_.multiply"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#ffa739",
+                                    "marginLeft": 10,
+                                    "marginRight": 10,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "x"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "react-native.View",
+                    "props": {
+                      "style": {
+                        "flexDirection": "row",
+                        "marginBottom": 10
+                      },
+                      "children": [
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "4"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "4"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "5"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "5"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "6"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "6"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_BEGIN_CALCULATING",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_STORE_VALUE",
+                                            "set": "calculator_stored",
+                                            "to": {
+                                              "args": [
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_stored"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                },
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_value"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                }
+                                              ],
+                                              "isFunc": true,
+                                              "type": {
+                                                "type": "_.identity",
+                                                "isFunc": true,
+                                                "args": [
+                                                  "$.state.rndm.calculator_symbol||_.add"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_VALUE",
+                                            "set": "calculator_value",
+                                            "to": ""
+                                          },
+                                          {
+                                            "type": "RNDM_DID_SET_SYMBOL",
+                                            "set": "calculator_symbol",
+                                            "to": "_.subtract"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#ffa739",
+                                    "marginLeft": 10,
+                                    "marginRight": 10,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "-"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "react-native.View",
+                    "props": {
+                      "style": {
+                        "flexDirection": "row",
+                        "marginBottom": 10
+                      },
+                      "children": [
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "1"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "1"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "2"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "2"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "3"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "3"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_BEGIN_CALCULATING",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_STORE_VALUE",
+                                            "set": "calculator_stored",
+                                            "to": {
+                                              "args": [
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_stored"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                },
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_value"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                }
+                                              ],
+                                              "isFunc": true,
+                                              "type": {
+                                                "type": "_.identity",
+                                                "isFunc": true,
+                                                "args": [
+                                                  "$.state.rndm.calculator_symbol||_.add"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_VALUE",
+                                            "set": "calculator_value",
+                                            "to": ""
+                                          },
+                                          {
+                                            "type": "RNDM_DID_SET_SYMBOL",
+                                            "set": "calculator_symbol",
+                                            "to": "_.add"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#ffa739",
+                                    "marginLeft": 10,
+                                    "marginRight": 10,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "+"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "react-native.View",
+                    "props": {
+                      "style": {
+                        "flexDirection": "row",
+                        "marginBottom": 10
+                      },
+                      "children": [
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "0"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 98,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "0"
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_UPDATE_VALUE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_UPDATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_value",
+                                                "."
+                                              ],
+                                              "isFunc": true,
+                                              "type": "RNDM.concatenate"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#8e8e8e",
+                                    "marginLeft": 10,
+                                    "marginRight": 0,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "."
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "react-native.TouchableOpacity",
+                          "props": {
+                            "activeOpacity": 0.9,
+                            "middleware": [
+                              {
+                                "middleware": "redux.connect",
+                                "args": [
+                                  [],
+                                  [
+                                    {
+                                      "prop": "onPress",
+                                      "action": {
+                                        "type": "RNDM_DISPATCH_DID_CALCULATE",
+                                        "updates": [
+                                          {
+                                            "type": "RNDM_DID_STORE_VALUE",
+                                            "set": "calculator_stored",
+                                            "to": {
+                                              "args": [
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_stored"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                },
+                                                {
+                                                  "isFunc": true,
+                                                  "type": "RNDM.Number.parseFloat",
+                                                  "args": [
+                                                    "$.state.rndm.calculator_value"
+                                                  ],
+                                                  "execute": [
+                                                    true
+                                                  ]
+                                                }
+                                              ],
+                                              "isFunc": true,
+                                              "type": {
+                                                "type": "_.identity",
+                                                "isFunc": true,
+                                                "args": [
+                                                  "$.state.rndm.calculator_symbol||_.add"
+                                                ]
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CALCULATE_VALUE",
+                                            "set": "calculator_value",
+                                            "to": {
+                                              "args": [
+                                                "$.state.rndm.calculator_stored"
+                                              ],
+                                              "isFunc": true,
+                                              "type": "_.identity"
+                                            }
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_STORED",
+                                            "set": "calculator_stored",
+                                            "to": ""
+                                          },
+                                          {
+                                            "type": "RNDM_DID_CLEAR_SYMBOL",
+                                            "set": "calculator_symbol",
+                                            "to": "_.add"
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                ]
+                              }
+                            ],
+                            "focusedOpacity": 0.7,
+                            "children": [
+                              {
+                                "type": "react-native.View",
+                                "props": {
+                                  "style": {
+                                    "height": 44,
+                                    "width": 44,
+                                    "backgroundColor": "#ffa739",
+                                    "marginLeft": 10,
+                                    "marginRight": 10,
+                                    "borderRadius": 22,
+                                    "alignItems": "center",
+                                    "justifyContent": "center"
+                                  },
+                                  "children": [
+                                    {
+                                      "type": "react-native.Text",
+                                      "props": {
+                                        "style": {
+                                          "color": "#ffffff"
+                                        },
+                                        "children": "="
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@rndm/render-plugin-redux",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "author": "RNDM",
+  "license": "Apache-2.0",
+  "scripts": {},
+  "description": "RNDM Render Plugin: Redux. Redux functionality for RNDM Render",
+  "homepage": "https://github.com/rndm-com/rndm-render-plugin-redux#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rndm-com/rndm-render-plugin-redux.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rndm-com/rndm-render-plugin-redux/issues"
+  },
+  "bin": {
+    "rndm-render-plugin-redux": "cli/index.js"
+  },
+  "dependencies": {
+    "babel-generator": "^6.26.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-createelement-to-jsx": "^1.0.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.2.0",
+    "@rndm/utils": "^0.1.0"
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "type": "RNDM.Logo",
+    "props": {
+      "middleware": [
+        {
+          "middleware": "redux.connect",
+          "args": [
+            [
+              {
+                "from": "rndm.height",
+                "to": "height",
+                "default": 200
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "type": "react-native.TouchableOpacity",
+    "props": {
+      "middleware": [
+        {
+          "middleware": "redux.connect",
+          "args": [
+            [],
+            [
+              {
+                "prop": "onPress",
+                "action": {
+                  "type": "RNDM_UPDATE_HEIGHT",
+                  "height": 100
+                }
+              }
+            ]
+          ]
+        }
+      ],
+      "children": {
+        "type": "react-native.View",
+        "props": {
+          "style": {
+            "backgroundColor": "#36d7b7",
+            "height": 44,
+            "alignItems": "center",
+            "justifyContent": "center",
+            "padding": 20,
+            "borderRadius": 22
+          },
+          "children": {
+            "type": "react-native.Text",
+            "props": {
+              "style": {
+                "color": "#ff0000"
+              },
+              "children": "Touch Me!"
+            }
+          }
+        }
+      }
+    }
+  }
+]
