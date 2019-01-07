@@ -143,7 +143,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_stored"
+                                                    "$.state.rndm.calculator_stored",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -153,7 +154,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_value"
+                                                    "$.state.rndm.calculator_value",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -166,6 +168,9 @@
                                                 "isFunc": true,
                                                 "args": [
                                                   "$.state.rndm.calculator_symbol||_.add"
+                                                ],
+                                                "execute": [
+                                                  true
                                                 ]
                                               }
                                             }
@@ -448,7 +453,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_stored"
+                                                    "$.state.rndm.calculator_stored",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -458,7 +464,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_value"
+                                                    "$.state.rndm.calculator_value",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -471,6 +478,9 @@
                                                 "isFunc": true,
                                                 "args": [
                                                   "$.state.rndm.calculator_symbol||_.add"
+                                                ],
+                                                "execute": [
+                                                  true
                                                 ]
                                               }
                                             }
@@ -753,7 +763,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_stored"
+                                                    "$.state.rndm.calculator_stored",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -763,7 +774,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_value"
+                                                    "$.state.rndm.calculator_value",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -776,6 +788,9 @@
                                                 "isFunc": true,
                                                 "args": [
                                                   "$.state.rndm.calculator_symbol||_.add"
+                                                ],
+                                                "execute": [
+                                                  true
                                                 ]
                                               }
                                             }
@@ -1058,7 +1073,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_stored"
+                                                    "$.state.rndm.calculator_stored",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -1068,7 +1084,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_value"
+                                                    "$.state.rndm.calculator_value",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -1081,6 +1098,9 @@
                                                 "isFunc": true,
                                                 "args": [
                                                   "$.state.rndm.calculator_symbol||_.add"
+                                                ],
+                                                "execute": [
+                                                  true
                                                 ]
                                               }
                                             }
@@ -1298,7 +1318,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_stored"
+                                                    "$.state.rndm.calculator_stored",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -1308,7 +1329,8 @@
                                                   "isFunc": true,
                                                   "type": "RNDM.Number.parseFloat",
                                                   "args": [
-                                                    "$.state.rndm.calculator_value"
+                                                    "$.state.rndm.calculator_value",
+                                                    0
                                                   ],
                                                   "execute": [
                                                     true
@@ -1321,6 +1343,9 @@
                                                 "isFunc": true,
                                                 "args": [
                                                   "$.state.rndm.calculator_symbol||_.add"
+                                                ],
+                                                "execute": [
+                                                  true
                                                 ]
                                               }
                                             }
