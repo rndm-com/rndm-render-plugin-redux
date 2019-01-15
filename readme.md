@@ -10,7 +10,7 @@ If you have not already done so, then please ensure you have installed the [RNDM
 
 ### Required Dependencies
 
-You will need to install the following dependencies, you have not already done so throuhg other packages:
+You will need to install the following dependencies, you have not already done so through other packages:
 
 - react
 - react-art
@@ -31,7 +31,7 @@ npm install --save @rndm/render-plugin-redux
 
 ### Post Installation
 
-In order to allow this plugin to work, it must first be included in your project. You can do this inside yout main index file:
+In order to allow this plugin to work, it must first be included in your project. You can do this inside your main index file:
 
 ```javascript
 import '@rndm/render-plugin-redux';
