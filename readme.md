@@ -1,12 +1,12 @@
-# RNDM Render Plugin: Redux
+# [RNDM](https://www.rndm.com) Render Plugin: Redux
 
 ## About
 
-This plugin provides functionality for [RNDM Render package](https://github.com/rndm-com/rndm-render) when integrating Redux for state management.
+This plugin provides functionality for [RNDM Render package](https://www.rndm.com/docs/rndm-render) when integrating Redux for state management.
 
 ## Installation
 
-If you have not already done so, then please ensure you have installed the [RNDM Render](https://github.com/rndm-com/rndm-render) and [RNDM Preset: Core](https://github.com/rndm-com/rndm-render-preset-core) package.
+If you have not already done so, then please ensure you have installed the [RNDM Render](https://www.rndm.com/docs/rndm-render) and [RNDM Preset: Core](https://www.rndm.com/docs/rndm-render/preset/core) package.
 
 ### Required Dependencies
 
@@ -205,3 +205,5 @@ src/app/redux/types/index.js
 ```javascript
 
 ```
+
+Check out the [Playground](https://www.rndm.com/playground) page to see how these features work.
