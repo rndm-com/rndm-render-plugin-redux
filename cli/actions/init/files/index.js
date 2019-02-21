@@ -77,7 +77,8 @@ export default ({ dispatch, getState }) => next => action => {
   if (action.type.startsWith('RNDM_DISPATCH_')) {
     const { updates = [] } = action;
     const state = getState();
-    dispatch(updates.map(({ type, set, to }) => ({ type, [set]: render(to, 'RNDM.functionChain', { state })()})));
+    const dispatches = updates.map(({ type, set, to }) => ({ type, [set]: !to.isFunc ? to : render(to, 'RNDM.functionChain', { state })() }));
+    dispatch(dispatches);
   }
 
   return next(action);
