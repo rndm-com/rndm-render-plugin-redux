@@ -1,6 +1,6 @@
 {
   "name": "@rndm/render-plugin-redux",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "src/index.js",
   "author": "RNDM",
   "license": "Apache-2.0",
@@ -18,13 +18,13 @@
     "rndm-render-plugin-redux": "cli/index.js"
   },
   "dependencies": {
-    "babel-generator": "^6.26.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-createelement-to-jsx": "^1.0.1",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "react-scripts": "1.1.4",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.2.0",
+    "@babel/generator": "^7.14.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.2",
+    "babel-plugin-transform-react-createelement-to-jsx": "^1.1.0",
+    "@babel/plugin-transform-react-jsx": "^7.14.3",
+    "react-scripts": "^4.0.3",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
     "@rndm/utils": "^0.1.0"
   }
 }
